@@ -14,7 +14,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  compile:
     # The type of runner that the job will run on
     runs-on: self-hosted
 
@@ -22,7 +22,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      
+      # Runs a single command using the runners shell
+      - name: static analysis 
+        run: cppcheck blink.cpp
+        
       # Runs a single command using the runners shell
       - name: compile 
         run: ./compile.sh
@@ -31,5 +35,10 @@ jobs:
       - name: link 
         run: ./linking.sh
         
+  upload:
+    runs-on: self-hosted
+    needs:
+      compile
+    steps:
       - name: flash 
         run: ./flash.sh
