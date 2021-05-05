@@ -92,4 +92,4 @@ build:
 
 clean:
 	rm -rf $(BUILD_DIR)
-	rm $(MAIN_SKETCH).hex
+	rm -f $(MAIN_SKETCH).hex
