@@ -1,5 +1,9 @@
 #include <Arduino.h>
+
 int led_int = 8;
+
+void setup();
+void loop();
 
 void setup() {
   Serial.begin(9600);
@@ -7,8 +11,8 @@ void setup() {
 }
 
 void loop() {
-  delay(500);
+  delay(2000);
   digitalWrite(led_int,HIGH);
-  delay(1000);
+  delay(2000);
   digitalWrite(led_int,LOW);
 }

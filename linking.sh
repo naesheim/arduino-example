@@ -1,4 +1,0 @@
-/private/var/folders/jf/0rksp_d91c3_yp3nhdr7pc8r0000gn/T/AppTranslocation/D593E682-9137-41C3-A503-DB7F9D152272/d/Arduino.app/Contents/Java/hardware/tools/avr/bin/avr-gcc -w -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p -o blink.ino.elf blink.o -L . -lm
-/private/var/folders/jf/0rksp_d91c3_yp3nhdr7pc8r0000gn/T/AppTranslocation/D593E682-9137-41C3-A503-DB7F9D152272/d/Arduino.app/Contents/Java/hardware/tools/avr/bin/avr-objcopy -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 blink.elf blink.eep
-/private/var/folders/jf/0rksp_d91c3_yp3nhdr7pc8r0000gn/T/AppTranslocation/D593E682-9137-41C3-A503-DB7F9D152272/d/Arduino.app/Contents/Java/hardware/tools/avr/bin/avr-objcopy -O ihex -R .eeprom blink.elf blink.hex
-/private/var/folders/jf/0rksp_d91c3_yp3nhdr7pc8r0000gn/T/AppTranslocation/D593E682-9137-41C3-A503-DB7F9D152272/d/Arduino.app/Contents/Java/hardware/tools/avr/bin/avr-size -A blink.elf

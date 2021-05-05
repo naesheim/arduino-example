@@ -28,17 +28,17 @@ jobs:
         run: cppcheck blink.cpp
         
       # Runs a single command using the runners shell
-      - name: compile 
-        run: ./compile.sh
+      - name: clean cache
+        run: make clean
 
       # Runs a set of commands using the runners shell
-      - name: link 
-        run: ./linking.sh
+      - name: compile and link 
+        run: make
         
   upload:
     runs-on: self-hosted
     needs:
       compile
     steps:
-      - name: flash 
+      - name: flash arduino uno
         run: ./flash.sh
