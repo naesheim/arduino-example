@@ -11,8 +11,8 @@ void setup() {
 }
 
 void loop() {
-  delay(2000);
+  delay(100);
   digitalWrite(led_int,HIGH);
-  delay(2000);
+  delay(100);
   digitalWrite(led_int,LOW);
 }
