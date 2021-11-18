@@ -4,8 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//#define VERSION_BUILD_INFO
-
 #include <zephyr.h>
 #include <sys/printk.h>
 #include "nrf_delay.h"
