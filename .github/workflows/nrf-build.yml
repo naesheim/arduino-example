@@ -8,7 +8,7 @@ on:
   push:
     branches: [ master ]
     paths:
-      - "nrf"
+      - "nrf52"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,12 +27,12 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: static analysis
-        working-directory: nrf/hello-world
+        working-directory: nrf52/hello-world
         run: cppcheck src/main.c
 
       # Runs a set of commands using the runners shell
       - name: build 
-        working-directory: nrf/hello-world
+        working-directory: nrf52/hello-world
         run: west build -p -b nrf52dk_nrf52832 --build-dir build
         
   upload:
@@ -41,5 +41,5 @@ jobs:
       compile
     steps:
       - name: flash elf
-        working-directory: nrf/hello-world
+        working-directory: nrf52/hello-world
         run: west flash --build-dir build

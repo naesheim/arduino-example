@@ -8,8 +8,15 @@
 
 #include <zephyr.h>
 #include <sys/printk.h>
+#include "nrf_delay.h"
 
 void main(void)
 {
-	printk("Hello World! %s\n", VERSION_BUILD_INFO);
+	while (true)
+	{
+		printk("Hello World! %s\n", VERSION_BUILD_INFO);
+		nrf_delay_ms(1000);
+	}
+	
+
 }

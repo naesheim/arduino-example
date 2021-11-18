@@ -11,5 +11,8 @@ execute_process(
 	OUTPUT_VARIABLE BUILD_INFO
 	OUTPUT_STRIP_TRAILING_WHITESPACE
 )
+
 add_compile_definitions(VERSION_BUILD_INFO="${BUILD_INFO}")
 target_sources(app PRIVATE src/main.c)
+target_include_directories(app PUBLIC "/opt/nrf-sdk/components/libraries/delay")
+
