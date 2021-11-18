@@ -1,0 +1,1 @@
+/Applications/Arduino.app/Contents/Java/hardware/tools/avr/bin/avrdude -v -v -v -v -C/Applications/Arduino.app/Contents/Java/hardware/tools/avr/etc/avrdude.conf -v -patmega328p -carduino -10 10 -P/dev/cu.usbmodem142101 -D -Uflash:w:blink.cpp.hex:i
