@@ -43,3 +43,28 @@ jobs:
       - name: flash elf
         working-directory: nrf52/hello_world
         run: west flash --build-dir build
+
+  logging:
+    runs-on: self-hosted
+    needs:
+      compile
+    steps:
+      - name: start monitor
+        run: |
+          screen -L /dev/tty.usbmodem0006820286461 115200
+
+      - name: delay
+        run: sleep 10
+
+      - name: stop_monitor
+        run: |
+          screen_ID="$(screen -ls | grep ttys | cut -c 2-5)"
+          screen -SX $screen_ID quit
+
+  verify:
+    runs-on: self-hosted
+    needs:
+      compile
+    steps:
+      - name: verify log
+        run: cat screenlog.0

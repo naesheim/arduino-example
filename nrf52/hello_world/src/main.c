@@ -12,7 +12,7 @@ void main(void)
 {
 	while (true)
 	{
-		printk("Hello World! %s\n", VERSION_BUILD_INFO);
+		printk("Hello Oslo! %s\n", VERSION_BUILD_INFO);
 		nrf_delay_ms(1000);
 	}
 	
